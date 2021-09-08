@@ -72,6 +72,13 @@
       "source": "builtin",
       "dependencies": {}
     },
+    "com.unity.cinemachine": {
+      "version": "2.6.10",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.collab-proxy": {
       "version": "1.7.1",
       "depth": 0,
@@ -79,6 +86,13 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "2.0.0"
       },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.device-simulator": {
+      "version": "3.0.1-preview",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
