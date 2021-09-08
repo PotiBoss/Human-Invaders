@@ -216,7 +216,7 @@ RectTransform:
   m_Children:
   - {fileID: 936889844}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -284,12 +284,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0f61181859eb5344fbbd55af8f971af0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1042705ed90a9f48a6bd01fbc000e62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.96, y: 1.2}
+  m_Size: {x: 3.6923077, y: 4.6153846}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -307,7 +307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &40049565
 PolygonCollider2D:
@@ -327,7 +327,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.6923077, y: 4.6153846}
-    newSize: {x: 0.96, y: 1.2}
+    newSize: {x: 3.6923077, y: 4.6153846}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18acf9e40d5e284f82cea6ca975a62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystickRadius: 62.5
   joystick: {fileID: 0}
   joystickBackground: {fileID: 0}
   joystickVector: {x: 0, y: 0}
@@ -471,12 +472,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244587663}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.2815075, y: -2.4039745, z: -6.023428}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -518.12054, y: -122.95961, z: 3.8023367}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 406891815}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &328624036
 GameObject:
@@ -557,9 +558,42 @@ SpriteRenderer:
   m_Size: {x: 1.6, y: 1.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &406891814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406891815}
+  m_Layer: 0
+  m_Name: Cameras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &406891815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406891814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 523.40204, y: 120.55563, z: -9.825765}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 519420032}
+  - {fileID: 1645648130}
+  - {fileID: 244587665}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,11 +705,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.2815075, y: -2.4039745, z: -16.023428}
+  m_LocalRotation: {x: -0.00000009536744, y: 0.00000066757207, z: 6.3664636e-14, w: 1}
+  m_LocalPosition: {x: -518.12054, y: -122.95961, z: -6.1976633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 406891815}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &717416894
@@ -817,7 +851,7 @@ SpriteRenderer:
   m_Size: {x: 0.8, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &858018262
@@ -884,7 +918,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &936889843
 GameObject:
@@ -977,6 +1011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18acf9e40d5e284f82cea6ca975a62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystickRadius: 62.5
   joystick: {fileID: 1886209348}
   joystickBackground: {fileID: 2088532910}
   joystickVector: {x: 0, y: 0}
@@ -1239,7 +1274,7 @@ Transform:
   - {fileID: 1049518331}
   - {fileID: 1287165119}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1645648128
 GameObject:
@@ -1252,7 +1287,7 @@ GameObject:
   - component: {fileID: 1645648130}
   - component: {fileID: 1645648129}
   m_Layer: 0
-  m_Name: CM vcam2
+  m_Name: CM vcam1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1300,13 +1335,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645648128}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.2815075, y: -2.4039745, z: -16.023428}
+  m_LocalRotation: {x: -0.00000009536744, y: 0.00000066757207, z: 6.3664636e-14, w: 1}
+  m_LocalPosition: {x: -518.12054, y: -122.95961, z: -6.1976633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1267410212}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 406891815}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1886209348
 GameObject:
@@ -1366,7 +1401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35b846f44fa51084b8f92b32060d85fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00a9ef6de42c8464fbf435d4205d2a36, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1442,7 +1477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 25b60a7a28f60fb4b99696661e5a5fa7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fbd810744464554ca42ad0f16055f03, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
