@@ -8,9 +8,17 @@ public class PlayerMov : MonoBehaviour
     public float playerMoveSpeed;
     private Rigidbody2D myRigidBody;
 
+
+    float xMin;
+    float xMax;
+    float yMin;
+    float yMax;
+
+
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
+        SetUpMoveBoundaries();
         
     }
 
@@ -25,5 +33,24 @@ public class PlayerMov : MonoBehaviour
         {
             myRigidBody.velocity = Vector2.zero;
         }
+
+        Move();
     }
+
+    private void SetUpMoveBoundaries()
+    {
+        Camera gameCamera = Camera.main;
+        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0.045f, 0, 0)).x;
+        xMax = gameCamera.ViewportToWorldPoint(new Vector3(0.955f, 0, 0)).x;
+        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0.025f, 0)).y;
+        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 0.5f, 0)).y;
+    }
+
+    private void Move()
+    {
+        var newXPos = Mathf.Clamp(transform.position.x, xMin, xMax);
+        var newYPos = Mathf.Clamp(transform.position.y, yMin, yMax);
+        transform.position = new Vector2(newXPos, newYPos);
+    }
+
 }

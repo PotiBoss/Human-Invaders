@@ -5,20 +5,21 @@ using UnityEngine.EventSystems;
 
 public class Joystick : MonoBehaviour
 {
-    [SerializeField] private float joystickRadius = 62.5f;
+   
 
     public GameObject joystick;
     public GameObject joystickBackground;
     public Vector2 joystickVector;
     private Vector2 joystickTouchPos;
     private Vector2 joystickOriginalPos;
+    private float joystickRadius;
 
-    
+
 
     private void Start()
     {
         joystickOriginalPos = gameObject.transform.position;
-        //joystickRadius = joystickBackground.GetComponent<RectTransform>().sizeDelta.y / 4; //SERIALIZE FIELD BO INACZEJ ERROR KTORY NIC NIE ZMIENIA
+        joystickRadius = joystickBackground.GetComponent<RectTransform>().sizeDelta.y / 4;
     }
 
     public void PointerDown() 
