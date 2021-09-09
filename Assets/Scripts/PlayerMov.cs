@@ -18,8 +18,7 @@ public class PlayerMov : MonoBehaviour
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
-        SetUpMoveBoundaries();
-        
+        SetUpMoveBoundaries();   
     }
 
     void FixedUpdate()

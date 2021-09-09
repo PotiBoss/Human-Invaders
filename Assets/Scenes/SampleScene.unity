@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 40049565}
   - component: {fileID: 40049567}
   - component: {fileID: 40049568}
+  - component: {fileID: 40049566}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -306,7 +307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &40049565
 PolygonCollider2D:
@@ -335,23 +336,45 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.18741424, y: -0.26427937}
       - {x: 0.3686598, y: -0.30042097}
-      - {x: 0.39085045, y: -0.24701062}
-      - {x: 0.3255412, y: -0.19384041}
-      - {x: 0.3259017, y: -0.123723984}
+      - {x: -0.3891492, y: -0.5077133}
+      - {x: -0.23650369, y: -0.58160055}
+      - {x: 0.02441138, y: -0.74591196}
+      - {x: 0.34263104, y: -0.13208866}
       - {x: 0.25670093, y: -0.11231919}
-      - {x: 0.25323027, y: 0.019020274}
-      - {x: 0.17512026, y: 0.02530136}
-      - {x: 0.12512025, y: 0.26268083}
-      - {x: 0.028290387, y: 0.5001206}
-      - {x: -0.009495456, y: 0.51877975}
-      - {x: -0.04993988, y: 0.49701065}
+      - {x: 0.4325056, y: -0.21900845}
+      - {x: 0.5509143, y: -0.27535152}
+      - {x: 1.0174179, y: -0.6300669}
+      - {x: 0.9224083, y: -0.76726323}
+      - {x: 0.41577864, y: -0.66725826}
+      - {x: 0.5085788, y: -1.2541456}
+      - {x: 0.33671856, y: -0.9370632}
+      - {x: 0.10820237, y: -1.0286537}
+      - {x: 0.06933308, y: -1.221425}
+      - {x: -0.05733919, y: -1.2003326}
+      - {x: -0.048755646, y: -1.0155163}
+      - {x: -0.2988782, y: -0.9131975}
+      - {x: -0.3313713, y: -0.94893265}
+      - {x: -0.48774862, y: -1.2599754}
+      - {x: -0.4286995, y: -0.6483383}
+      - {x: -0.96325636, y: -0.75847626}
+      - {x: -1.0224714, y: -0.59799194}
+      - {x: -0.46914482, y: -0.14719677}
+      - {x: -0.40727806, y: 0.11138725}
+      - {x: -0.16873264, y: 1.1084375}
+      - {x: -0.08468723, y: -0.60793686}
+      - {x: 0.43461475, y: -0.16392058}
+      - {x: 0.27024555, y: 0.7307968}
+      - {x: 0.07847941, y: 1.186027}
+      - {x: -0.0011312552, y: 1.2465105}
+      - {x: -0.06845236, y: 1.2349663}
+      - {x: -0.13358665, y: 1.1578231}
       - {x: -0.078350484, y: 0.3942604}
       - {x: -0.13140033, y: 0.23774013}
       - {x: -0.18058284, y: -0.08674812}
       - {x: -0.21597071, y: -0.102329254}
       - {x: -0.22396807, y: 0.015914917}
       - {x: -0.2600646, y: 0.027540207}
-      - {x: -0.24780047, y: -0.12640095}
+      - {x: -0.15578854, y: -0.2769661}
       - {x: -0.29550302, y: -0.14458942}
       - {x: -0.32236665, y: -0.11890602}
       - {x: -0.3300598, y: -0.1776514}
@@ -368,6 +391,21 @@ PolygonCollider2D:
       - {x: 0.049580496, y: -0.43158436}
       - {x: 0.12853087, y: -0.40054053}
       - {x: 0.18768035, y: -0.47189006}
+--- !u!114 &40049566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40049562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a030f8a8f194ff4cafbe43caf06ac63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponType: {fileID: 4212563183956668657, guid: 244b2fd2e29fd6a4eb7f84b74eb845ee, type: 3}
+  missileSpeed: 10
+  fireRateDelay: 0.2
 --- !u!50 &40049567
 Rigidbody2D:
   serializedVersion: 4
@@ -376,7 +414,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40049562}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -583,7 +621,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 27.060184
+  orthographic size: 27.083334
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1092,7 +1130,7 @@ Transform:
   - {fileID: 1049518331}
   - {fileID: 1287165119}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1645648128
 GameObject:
