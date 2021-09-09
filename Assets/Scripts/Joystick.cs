@@ -18,7 +18,7 @@ public class Joystick : MonoBehaviour
 
     private void Start()
     {
-        joystickOriginalPos = gameObject.transform.position;
+        joystickOriginalPos = joystick.transform.position;
         joystickRadius = joystickBackground.GetComponent<RectTransform>().sizeDelta.y / 4;
     }
 
