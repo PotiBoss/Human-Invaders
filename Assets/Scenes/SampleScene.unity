@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: {fileID: 4212563183956668657, guid: 244b2fd2e29fd6a4eb7f84b74eb845ee, type: 3}
-  missileSpeed: 10
+  missileSpeed: 20
   fireRateDelay: 0.2
 --- !u!50 &40049567
 Rigidbody2D:
@@ -1603,7 +1603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1043250429403289664, guid: 798905ca2ea7b9b4785f81c2cb7a2d17, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.18
+      value: 13.55
       objectReference: {fileID: 0}
     - target: {fileID: 1043250429403289664, guid: 798905ca2ea7b9b4785f81c2cb7a2d17, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1649,5 +1649,9 @@ PrefabInstance:
       propertyPath: health
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1043250429403289679, guid: 798905ca2ea7b9b4785f81c2cb7a2d17, type: 3}
+      propertyPath: laserPrefab
+      value: 
+      objectReference: {fileID: 5746415907976748808, guid: dcd53609280059f47b9692d5f43e0dff, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 798905ca2ea7b9b4785f81c2cb7a2d17, type: 3}
