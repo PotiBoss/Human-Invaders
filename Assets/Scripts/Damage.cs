@@ -6,7 +6,7 @@ public class Damage : MonoBehaviour
 {
     [SerializeField] int damageValue = 10;
 
-    public int GetDamageValue()
+    public int GetDamage()
     {
         return damageValue;
     }
