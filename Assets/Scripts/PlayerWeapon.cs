@@ -32,7 +32,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         while (true)
         {
-            Vector3 weaponSpawn = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, gameObject.transform.position.z);
+            Vector3 weaponSpawn = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1.5f, gameObject.transform.position.z); // spawns missiles further from player
             GameObject laser = Instantiate(weaponType, weaponSpawn, Quaternion.identity) as GameObject;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, missileSpeed);
             yield return new WaitForSeconds(fireRateDelay);
