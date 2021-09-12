@@ -11,9 +11,14 @@ public class Damage : MonoBehaviour
         return damageValue;
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void Hit()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Hit();
     }
 
 }
