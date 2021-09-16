@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Header("Enemy Stats")]
-    [SerializeField] int scoreValue = 150;
+    [SerializeField] int pointsValue = 150;
     [SerializeField] float health = 1;
 
     [Header("Shooting")]
@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            //FindObjectOfType<GameSession>().AddToScore(scoreValue);
+            FindObjectOfType<GameSession>().AddPoints(pointsValue);
         }
     }
 }
