@@ -157,9 +157,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64c14c1df311384f8f2e64dd09769e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 150
+  pointsValue: 150
   health: 30
   minTimeBetweenShots: 0.3
   maxTimeBetweenShots: 1.5
-  laserPrefab: {fileID: 5746415907976748808, guid: dcd53609280059f47b9692d5f43e0dff, type: 3}
+  weaponPrefab: {fileID: 5746415907976748808, guid: dcd53609280059f47b9692d5f43e0dff, type: 3}
   projectileSpeed: 20
+  weaponSoundPrefab: {fileID: 0}
+  laserSoundVolume: 10
+  deathSoundPrefab: {fileID: 0}
+  deathSoundVolume: 0
