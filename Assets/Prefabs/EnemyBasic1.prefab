@@ -163,7 +163,7 @@ MonoBehaviour:
   maxTimeBetweenShots: 1.5
   weaponPrefab: {fileID: 5746415907976748808, guid: dcd53609280059f47b9692d5f43e0dff, type: 3}
   projectileSpeed: 20
-  weaponSoundPrefab: {fileID: 0}
-  laserSoundVolume: 10
-  deathSoundPrefab: {fileID: 0}
-  deathSoundVolume: 0
+  weaponSoundPrefab: {fileID: 8300000, guid: c54aa921fdb17ba49b7585944e6f64cb, type: 3}
+  weaponSoundVolume: 0.2
+  deathSoundPrefab: {fileID: 8300000, guid: d8bbdf6043b95a040824eba5c90bc6fa, type: 3}
+  deathSoundVolume: 0.3

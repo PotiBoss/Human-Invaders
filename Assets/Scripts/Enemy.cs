@@ -16,9 +16,9 @@ public class Enemy : MonoBehaviour
 
     [Header("Sound Effects")]
     [SerializeField] AudioClip weaponSoundPrefab;
-    [SerializeField] int weaponSoundVolume = 10;
+    [SerializeField] float weaponSoundVolume;
     [SerializeField] AudioClip deathSoundPrefab;
-    [SerializeField] int deathSoundVolume = 10;
+    [SerializeField] float deathSoundVolume;
 
     float shotCounter;
 
@@ -31,7 +31,6 @@ public class Enemy : MonoBehaviour
     {
         CountDownAndShoot();
     }
-
     private void CountDownAndShoot()
     {
         shotCounter -= Time.deltaTime;
