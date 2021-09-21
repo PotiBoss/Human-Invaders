@@ -2008,8 +2008,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2091131267}
-        m_TargetAssemblyTypeName: ButtonWeapon, Assembly-CSharp
-        m_MethodName: DestroyEnemyBullets
+        m_TargetAssemblyTypeName: ButtonClear, Assembly-CSharp
+        m_MethodName: ClearEnemyBullets
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2066,11 +2066,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2091131262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b132d4905dd7b2741b327400df64c8ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 9870d77d539339c46b0d7bbfffd072f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 0}
-  shipSprite: {fileID: 0}
 --- !u!1 &2122450302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,7 +2905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3864542450833096694, guid: a3042fe030de1b3468d8c893446db106, type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 27.083334
       objectReference: {fileID: 0}
     - target: {fileID: 3864542450943519406, guid: a3042fe030de1b3468d8c893446db106, type: 3}
       propertyPath: m_RootOrder
