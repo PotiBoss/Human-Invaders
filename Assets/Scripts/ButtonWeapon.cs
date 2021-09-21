@@ -11,4 +11,13 @@ public class ButtonWeapon : MonoBehaviour
     {
         FindObjectOfType<PlayerWeapon>().ChangeWeaponAndSprite(weaponPrefab, shipSprite);
     }
+
+    public void DestroyEnemyBullets()
+    {
+        GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyWeapon");
+        foreach (GameObject enemyBullet in enemyBullets)
+        {
+            GameObject.Destroy(enemyBullet);
+        }
+    }
 }
