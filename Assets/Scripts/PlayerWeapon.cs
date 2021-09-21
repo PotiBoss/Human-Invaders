@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    [SerializeField] GameObject weaponType;
+    [SerializeField] Damage weaponType;
 
     [SerializeField] float missileSpeed;
     [SerializeField] float fireRateDelay;
@@ -23,6 +23,12 @@ public class PlayerWeapon : MonoBehaviour
 
     }
 
+    public void ChangeWeaponAndSprite(Damage newWeapon, Sprite newSprite)
+    {
+        weaponType = newWeapon;
+        GetComponent<SpriteRenderer>().sprite = newSprite;
+    }
+
     private void Fire()
     {
         fireCoroutine = StartCoroutine(FireNonStop());
@@ -33,7 +39,7 @@ public class PlayerWeapon : MonoBehaviour
         while (true)
         {
             Vector3 weaponSpawn = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1.5f, gameObject.transform.position.z); // spawns missiles further from player
-            GameObject laser = Instantiate(weaponType, weaponSpawn, Quaternion.identity) as GameObject;
+            Damage laser = Instantiate(weaponType, weaponSpawn, Quaternion.identity) as Damage;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, missileSpeed);
             yield return new WaitForSeconds(fireRateDelay);
         }
