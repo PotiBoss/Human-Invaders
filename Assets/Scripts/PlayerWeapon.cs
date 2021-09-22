@@ -23,9 +23,12 @@ public class PlayerWeapon : MonoBehaviour
 
     }
 
-    public void ChangeWeaponAndSprite(Damage newWeapon, Sprite newSprite)
+    public void ChangeWeaponAndSprite(Damage newWeapon, int missileSpeedPrefab, float fireRateDelayPrefab, Sprite newSprite)
     {
         weaponType = newWeapon;
+        missileSpeed = missileSpeedPrefab;
+        fireRateDelay = fireRateDelayPrefab;
+
         GetComponent<SpriteRenderer>().sprite = newSprite;
     }
 

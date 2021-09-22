@@ -4,21 +4,43 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    [SerializeField] int damageValue = 10;
+    [SerializeField] float damageValue = 10;
 
-    public int GetDamage()
+    public float GetDamage()
     {
         return damageValue;
     }
 
     public void Hit()
     {
-        Destroy(gameObject);
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void HealthToReduce()
+    {
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Hit();
-    }
+        if(collision.gameObject.tag == "Enemy")
+        {
+            float healthToReduce = collision.gameObject.GetComponent<Enemy>().GetHealth();
+            if (damageValue - healthToReduce <= 0)
+            {
+                Hit();
+            }
+            else
+            {
+                damageValue -= healthToReduce;
+            }
+        }
+        else
+        {
+            Hit();
+        }
 
+    }
 }

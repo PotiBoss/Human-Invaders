@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Enemy Stats")]
     [SerializeField] int pointsValue = 150;
-    [SerializeField] float health = 1;
+    [SerializeField] float health = 100;
 
     [Header("Shooting")]
     [SerializeField] float minTimeBetweenShots = 0.2f;
@@ -64,5 +64,10 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             FindObjectOfType<GameSession>().AddPoints(pointsValue);
         }
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 }
