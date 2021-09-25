@@ -39,11 +39,16 @@ public class PlayerMov : MonoBehaviour
     private void SetUpMoveBoundaries()
     {
         Camera gameCamera = Camera.main;
-        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0.045f, 0, 0)).x;
-        xMax = gameCamera.ViewportToWorldPoint(new Vector3(0.955f, 0, 0)).x;
-        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0.025f, 0)).y;
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 0.955f, 0)).y;
+        xMin = new Vector3(-6f, 0, 0).x;
+        xMax = new Vector3(16.5f, 0, 0).x;
+        yMin = new Vector3(0, -24f, 0).y;
+        yMax = new Vector3(0, 22f, 0).y;
     }
+
+   // xMin = gameCamera.ViewportToWorldPoint(new Vector3(0.045f, 0, 0)).x;
+     //   xMax = gameCamera.ViewportToWorldPoint(new Vector3(0.955f, 0, 0)).x;
+       // yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0.025f, 0)).y;
+        //yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 0.955f, 0)).y;
 
     private void Move()
     {
