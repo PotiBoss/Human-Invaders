@@ -10,6 +10,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] float fireRateDelay;
 
     Coroutine fireCoroutine;
+    bool shouldFire = true;
 
     
 
@@ -25,21 +26,33 @@ public class PlayerWeapon : MonoBehaviour
 
     public void ChangeWeaponAndSprite(Damage newWeapon, int missileSpeedPrefab, float fireRateDelayPrefab, Sprite newSprite)
     {
+        shouldFire = true;
         weaponType = newWeapon;
         missileSpeed = missileSpeedPrefab;
         fireRateDelay = fireRateDelayPrefab;
+        GetComponent<SpriteRenderer>().sprite = newSprite;
+        Fire();
 
+    }
+
+    public void ChangeLaserAndSprite(float fireDelay, Sprite newSprite)
+    {
+        shouldFire = false;
         GetComponent<SpriteRenderer>().sprite = newSprite;
     }
 
+
+
+
     private void Fire()
     {
+        StopAllCoroutines();
         fireCoroutine = StartCoroutine(FireNonStop());
     }
 
     IEnumerator FireNonStop()
     {
-        while (true)
+        while (shouldFire)
         {
             Vector3 weaponSpawn = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1.5f, gameObject.transform.position.z); // spawns missiles further from player
             Damage laser = Instantiate(weaponType, weaponSpawn, Quaternion.identity) as Damage;
