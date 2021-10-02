@@ -47,7 +47,7 @@ public class ButtonWeapon : MonoBehaviour
     public void EnableLaser()
     {
         FindObjectOfType<PlayerWeapon>().ChangeLaserAndSprite(fireRateDelayPrefab, shipSprite);
-        laserPrefab.enabled = true;  
+        laserPrefab.enabled = true;
     }
 
     private void DisableLaser()

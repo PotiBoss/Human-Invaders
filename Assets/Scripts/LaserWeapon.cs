@@ -4,38 +4,38 @@ using UnityEngine;
 
 public class LaserWeapon : MonoBehaviour
 {
-    [SerializeField] Camera cameraMain;
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] Transform firePoint;
 
+    Vector3 startingPos;
+    int layerMask;
+    Vector3 laserPos;
+
+
     void Start()
     {
-        
+        layerMask = LayerMask.GetMask("Enemy");
+        laserPos = GetComponent<LineRenderer>().GetPosition(1);
     }
+
 
     void Update()
     {
-        EnableLaser();
-        UpdateLaser();
-    }
+        startingPos = GetComponentInParent<Transform>().position; // ship transform pos update
 
-    void EnableLaser()
-    {
-        lineRenderer.enabled = true;
-    }
+        RaycastHit2D hit = Physics2D.Raycast(startingPos, Vector2.up, laserPos.y, layerMask); // raycast range and direction
 
-    void UpdateLaser()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.position);
-        if (hit)
+        if(hit.collider != null)
         {
-            lineRenderer.SetPosition(1, hit.point);
+            Debug.Log(hit.point);
+            Vector3 hitPoint = new Vector3(0, hit.point.y + Mathf.Abs(startingPos.y), 0);
+            lineRenderer.SetPosition(1, hitPoint);
+
+        }
+        else
+        {
+            lineRenderer.SetPosition(1, laserPos);
         }
 
-    }
-
-    void DisableLaser()
-    {
-        lineRenderer.enabled = false;
     }
 }
