@@ -55,9 +55,20 @@ public class Enemy : MonoBehaviour
         ProcessHit(damageDealer);
     }
 
-    private void ProcessHit(Damage damageDealer)
+    public void ProcessHit(Damage damageDealer)
     {
+        Debug.Log(health);
+        Debug.Log(damageDealer.GetDamage());
+        //Debug.Log(health);
+
+
+
+
+        float healthToReduce = health;
         health -= damageDealer.GetDamage();
+        damageDealer.ReduceDamage(healthToReduce);
+
+
         if (health <= 0)
         {
             AudioSource.PlayClipAtPoint(deathSoundPrefab, Camera.main.transform.position, deathSoundVolume);

@@ -21,21 +21,27 @@ public class LaserWeapon : MonoBehaviour
 
     void Update()
     {
-        startingPos = GetComponentInParent<Transform>().position; // ship transform pos update
 
-        RaycastHit2D hit = Physics2D.Raycast(startingPos, Vector2.up, laserPos.y, layerMask); // raycast range and direction
-
-        if(hit.collider != null)
+        if (lineRenderer.enabled)
         {
-            Debug.Log(hit.point);
-            Vector3 hitPoint = new Vector3(0, hit.point.y + Mathf.Abs(startingPos.y), 0);
-            lineRenderer.SetPosition(1, hitPoint);
+            startingPos = GetComponentInParent<Transform>().position; // ship transform pos update
 
-        }
-        else
-        {
-            lineRenderer.SetPosition(1, laserPos);
-        }
+            RaycastHit2D hit = Physics2D.Raycast(startingPos, Vector2.up, laserPos.y, layerMask); // raycast range and direction
 
+            if (hit.collider != null)
+            {
+                Vector3 hitPoint = new Vector3(0, hit.point.y + Mathf.Abs(startingPos.y), 0);
+                lineRenderer.SetPosition(1, hitPoint);
+
+
+                GetComponent<Damage>().OnTriggerEnter2D(hit.collider);
+
+
+            }
+            else
+            {
+                lineRenderer.SetPosition(1, laserPos);
+            }
+        }
     }
 }

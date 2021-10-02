@@ -1,0 +1,2 @@
+-double shooting on spamclicking weapons
+-pierce works weird on 1st or last pierce

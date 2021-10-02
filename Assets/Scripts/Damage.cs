@@ -4,43 +4,59 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    [SerializeField] float damageValue = 10;
+    [SerializeField] float damageValue;
+    float startingDamageValue;
+
+    float laserDamage = 5f;
+    float healthToReduce;
+
+    private void Start()
+    {
+        startingDamageValue = damageValue;
+    }
 
     public float GetDamage()
     {
         return damageValue;
     }
 
-    public void Hit()
+    public void ReduceDamage(float health)
     {
+        if (!gameObject.GetComponent<LaserWeapon>())
         {
-            Destroy(gameObject);
+            damageValue -= health;
         }
     }
 
-    public void HealthToReduce()
-    {
 
+    public void Hit()
+    {
+        damageValue = startingDamageValue;
+        Destroy(gameObject);
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Enemy")
         {
             float healthToReduce = collision.gameObject.GetComponent<Enemy>().GetHealth();
-            if (damageValue - healthToReduce <= 0)
+
+            Debug.Log(healthToReduce);
+            Debug.Log(damageValue);
+            if (gameObject.GetComponent<LaserWeapon>())
+            {
+                collision.gameObject.GetComponent<Enemy>().ProcessHit(GetComponent<Damage>());
+            }
+
+            else if (damageValue - healthToReduce <= 0)
             {
                 Hit();
-            }
-            else
-            {
-                damageValue -= healthToReduce;
             }
         }
         else
         {
-            Hit();
+            Destroy(gameObject);
         }
 
     }
